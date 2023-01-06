@@ -13,7 +13,7 @@
 
 # Fetures 
  - Searching users on GitHub.S
- - A Game -- Optional.
+ - A Game -- Optional
 
  
 # Live Demo
