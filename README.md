@@ -12,8 +12,8 @@
  - 3 lwc components 
 
 # Fetures 
- - Searching users on GitHub.
- - A Game -- Optional.
+ - Searching users on GitHub.S
+ - A Game -- Optional
 
  
 # Live Demo
