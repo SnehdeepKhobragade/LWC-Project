@@ -1,0 +1,31 @@
+<aura:component >
+    <aura:attribute name="count" type="integer" default="0"/>
+        <aura:attribute name="count1" type="integer" default="0"/>
+
+	<div class="slds-grid slds-gutters slds-wrap " style="height: 70px;">
+     <div class="slds-size_1-of-5">
+        <div class="slds-box slds-box_small slds-text-align_center slds-m-around_small">
+        <div>
+             <img src="{!$Resource.Swati}"/>
+        </div>
+        swati
+    <lightning:input name="input" value="{!v.count}" />
+<lightning:button variant="brand" label="Vote" onclick="{!c.increment}"/>
+    <lightning:button variant="brand" label="-1" onclick="{!c.decrement}"/>
+        </div>
+         <div>
+   </div>
+    </div>
+   <div class="slds-size_1-of-5">
+        <div class="slds-box slds-box_small slds-text-align_center slds-m-around_small">
+        <div>
+            <img src="{!$Resource.Sravani}"/>
+        </div>
+        Sravani
+     <lightning:input name="input1" value="{!v.count1}" />
+     <lightning:button variant="brand" label="Vote+" onclick="{!c.increment1}"/>
+    <lightning:button variant="brand" label="Vote-" onclick="{!c.decrement1}"/>
+    </div>
+    </div>
+    </div>
+</aura:component>

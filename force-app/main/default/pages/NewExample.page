@@ -1,0 +1,9 @@
+<apex:page standardController="Account" > 
+    <h1>
+         
+        hello world visualforce {!$User.Email}
+    </h1>
+    <h1>
+        hello world welcome {!Account.name}
+    </h1>
+</apex:page>

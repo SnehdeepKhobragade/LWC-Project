@@ -1,0 +1,38 @@
+<aura:component controller="VotingPoll" implements="lightning:actionOverride,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:lightningQuickAction,force:hasRecordId,force:appHostable,flexipage:availableForAllPageTypes">
+ <aura:handler name="init" value="{!this}" action="{!c.doInit}" /> 
+ <aura:attribute name="pictureList" type="List"/>
+ <aura:attribute name="count" type="Decimal" default="0"/>
+ <aura:attribute name="contents" type="List" default="[]"/>
+ <aura:attribute name="sObjectName" type="String"/>
+ <aura:attribute name="prefixURL" type="String" 
+default="/sfc/servlet.shepherd/version/download/"/>
+ <aura:registerEvent name="compEvent" type="c:compEvent"/>
+ 
+ <figure class="slds-image slds-image--card">
+ <a href="javascript:void(0);" class="slds-image__crop slds-image__crop--1-by-1">
+ <aura:iteration items="{!v.contents}" var="content">
+ <img src="{!v.prefixURL + content.Id}" alt="Description of the image" />
+ </aura:iteration>
+ </a>
+ <figcaption class="slds-image__title slds-image__title--card">
+ <span class="slds-image__text slds-truncate" title="{!v.pictureList.Name}"> 
+ <div class="slds-text-color_inverse" style="padding:0.5rem;background:#16355c">
+ {!v.pictureList.Name} 
+ <span>
+ <span style="margin-left: 50px;">
+ <b><lightning:button label="-" title="-" value="{!v.pictureList.Id}" 
+class="slds-button slds-button_success" onclick="{!c.decreaseVote }"/></b>
+ <span style="margin-left: 3px;">
+ <lightning:button label="Vote +" title="Vote" value="{!v.pictureList.Id}" 
+ class="slds-button slds-button_success" onclick="{!c.handleVote }"/>
+ </span>
+ <span style="margin-left: 30px;">
+ {!v.count}
+ </span>
+ </span>
+ </span>
+ </div>
+ </span>
+ </figcaption>
+ </figure>
+</aura:component>

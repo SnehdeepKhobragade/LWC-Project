@@ -1,0 +1,27 @@
+<aura:component controller="createrelatedcontact" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+                access="global" >
+    <aura:attribute name="recordId" type="Id"/>
+    <aura:attribute name="accountId" Type="Id"/>
+    <aura:attribute name="Name" type="String"/>
+    <aura:attribute name="account" type="Account"/>
+    <aura:attribute name="contact" type="Contact"
+                    default="{ 'sobjectType': 'Contact','LastName':'','FirstName':'','Phone':'','Email':'','Name':'','AccountId':''}"/>
+  <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <div class="slds-form-element__control">
+        <lightning:input name="RecordId"  label="record Id" value="{!v.recordId}" disabled="true"/>
+        <lightning:input name="Account Name"  label="Account Name" value="{!v.account.Name}" disabled="true"/>
+    </div>
+    <div class="slds-form-element__control">
+        FirstName  <force:inputField value="{!v.contact.FirstName}"/>
+    </div>
+    <div class="slds-form-element__control">
+        LastName  <force:inputField value="{!v.contact.LastName}"/>
+    </div>
+    <div class="slds-form-element__control">
+        Phone  <force:inputField value="{!v.contact.Phone}"/>
+    </div>
+    <div class="slds-form-element__control">
+       Email  <force:inputField value="{!v.contact.Email}"/>
+    </div>
+<lightning:button aura:id="insert" label="Create Contact" class="slds-button slds-button--brand buttontype" onclick="{!c.InsertCont}" />
+</aura:component>

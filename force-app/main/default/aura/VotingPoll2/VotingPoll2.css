@@ -1,0 +1,9 @@
+.THIS.slds-image__crop img,.THIS .slds-file__crop img{
+        max-width: 50;
+        max-height:50;
+}
+.THIS.slds-image_card,.THIS.slds-image--card,.THIS.slds-file_card,.THIS.slds-file--card{
+    border-top-right-radius: 8px !important;
+    border-top-left-radius: 8px !important;
+    border: 1px solid rgb(1, 1, 1, 1);
+}

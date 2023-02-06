@@ -1,0 +1,13 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+ <aura:attribute name="title" type="string" default="Calculator Output"/>
+    <aura:attribute name="result" type="integer"/>
+    <aura:handler event="c:DemoCalculatorEvent" action="{!c.getResult}"/>
+    <lightning:card>
+    <aura:set attribute="title">
+        <lightning:icon iconName="utility:connected_apps" size="small"/>
+        {!v.title}
+        </aura:set>
+        <lightning:input type="number" label="Result" value="{!v.result}"/>
+    </lightning:card>
+
+</aura:component>

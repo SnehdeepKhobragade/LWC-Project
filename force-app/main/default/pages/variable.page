@@ -1,0 +1,12 @@
+<apex:page sidebar="false" showHeader="false">
+    <!--Begin Default content Remove This-->
+    <h4>
+       Congratulations
+        <p>
+            Hello {!$User.FirstName}
+        </p>
+    </h4>
+
+
+    
+</apex:page>

@@ -1,0 +1,9 @@
+<aura:component >
+	<aura:attribute name="Colors" type="List" />
+    <aura:attribute name="ColorsDefault" type="List"
+                  default="[ 'Red', 'Blue', 'Green' ]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    <aura:iteration items="{!v.Colors[1]}" var="item">
+        {!item}
+    </aura:iteration>
+</aura:component>

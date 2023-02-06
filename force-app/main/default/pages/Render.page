@@ -1,0 +1,8 @@
+<apex:page standardController="Account" renderAs="pdf" applyBodyTag="false">
+    <head>
+        <style>
+            body {font-family:'Arial unicode MS';}
+            .companyName{font:bold 30px; color:red;}
+        </style>
+    </head>
+</apex:page>

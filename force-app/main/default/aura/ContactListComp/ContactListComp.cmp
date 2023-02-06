@@ -1,0 +1,19 @@
+<aura:component controller="ContactListComp" implements="flexipage:availableForRecordHome">
+     <aura:attribute name="newContact" type="Contact" default="{ 'sobjectName' : 'Contact',
+                                                               'FirstName' :'',
+                                                               'LastName' :'',
+                                                               'Email' :'',
+                                                               'Phone' :''}"/>
+    <aura:attribute name="contactId" type="string" />
+    <aura:attribute name="message" type="string" />
+    <lightning:card iconName="standard:contact" title="Add a Contact">
+    <div class="slds-p-around_medium">
+        <lightning:input aura:id="Contact" label="First Name" type="text" value="{!v.newContact.FirstName}" required="true"/>
+        <lightning:input aura:id="Contact" label="Last Name" type="text" value="{!v.newContact.LastName}"/>
+        <lightning:input aura:id="Contact" label="Email" type="email" value="{!v.newContact.Email}"/>
+        <lightning:input aura:id="Contact" label="Phone" type="phone" value="{!v.newContact.Phone}"/>
+        <lightning:button label="Create Contact" title="save" onclick="{!c.doCreateContact}" variant="brand" /> <!-- class="slds-m-top_medium" -->
+        </div>
+    </lightning:card>
+	
+</aura:component>

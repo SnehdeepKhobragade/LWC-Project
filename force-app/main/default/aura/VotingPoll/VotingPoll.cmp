@@ -1,0 +1,63 @@
+<aura:component controller="VotingPoll" implements="lightning:actionOverride,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:lightningQuickAction,force:hasRecordId,force:appHostable,flexipage:availableForAllPageTypes">
+ <aura:attribute name="recordId" type="String" />
+ <aura:attribute name="employeeList" type="List"/>
+ <aura:attribute name="Vote" type="Decimal" default="0"/>
+ <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+ <aura:attribute name="employeeIdWIthVote" type="List" default="[]"/>
+ <aura:attribute name="isModalOpen" type="boolean" default="false"/>
+ <aura:attribute name="isShowResult" type="boolean" default="true"/>
+ <aura:handler name="compEvent" event="c:compEvent" 
+action="{!c.handleComponentEvent}"/>
+ 
+ <div class="c-container" >
+ <lightning:layout multipleRows="true">
+ <aura:iteration items="{!v.employeeList}" var="emp">
+ <lightning:layoutItem flexibility="auto" size="2" padding="around-small">
+ <div >
+ <ul class="slds-has-dividers_around-space"> 
+ <figure class="slds-image slds-image--card">
+ <h3 class="slds-tile__title slds-truncate" title="{!emp.Name}">
+ <div id='clickDetails' title = "{!emp.Id}" label="{!emp.Name}">
+ <c:VotingPoll2 pictureList="{!emp}"/>
+ </div>
+ </h3>
+ </figure>
+ </ul>
+ </div>
+ </lightning:layoutItem>
+ </aura:iteration>
+ <div class="slds-m-around_xx-large">
+ <lightning:button variant="brand" label="Show Result" title="Show Result" 
+ onclick="{!c.openModel}" />
+ <aura:if isTrue="{!v.isModalOpen}">
+ <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+ <div class="slds-modal__container">
+ 
+ <header class="slds-modal__header">
+ <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Voting Result</h2>
+ </header>
+ <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+ <p><b>VamriTech Employees</b></p>
+ <div class="slds-grid slds-wrap slds-text-align_center">
+ <div class="slds-size_1-of-2 slds-max-small-size_1-of-1"><b>Name</b></div>
+ <div class="slds-size_1-of-2 slds-max-small-size_1-of-1"><b>Count</b></div>
+ 
+ <aura:iteration items="{!v.employeeList}" var="empList" >
+ <div class="slds-size_1-of-2 slds-max-small-size_1-of-1">{!empList.Name}</div>
+ <div class="slds-size_1-of-2 slds-max-small-size_1-of-1">{!empList.Vote__c}</div>
+ </aura:iteration> 
+ </div>
+ </div>
+ <footer class="slds-modal__footer">
+ <lightning:button variant="brand" label="OK" title="OK" 
+onclick="{!c.submitDetails}"/> 
+ </footer>
+ </div>
+ </section>
+ <div class="slds-backdrop slds-backdrop_open"></div>
+ </aura:if>
+ </div>
+ </lightning:layout> 
+ <lightning:button label="Submit" onclick="{!c.Submit}" variant="brand"/>
+ </div>
+</aura:component>

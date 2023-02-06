@@ -1,0 +1,11 @@
+<aura:component>
+    <aura:attribute name="map" type="Map" default="{str1:null,str2:null,obj:null}"/>
+    <aura:attribute name="str1" type="String"  default="{!v.map.str1}"/>
+    <aura:attribute name="str2" type="String" default="{!v.map.str2}"/>
+    <aura:attribute name="obj" type="Contact" default="{!v.map.obj}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <p><b>{!v.map.str1}</b></p>
+    <p><b>{!v.map.obj.FirstName}</b></p>
+    <p><b>{!v.map.str2}</b></p>
+    <p><b>{!v.map.obj.LastName}</b></p>
+</aura:component>
