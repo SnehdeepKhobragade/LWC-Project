@@ -1,0 +1,16 @@
+<template>
+    <template if:true={retrivedUser}>
+    <div class="slds-var-p-around_medium lgc-bg">
+        
+        <lightning-tile label={retrivedUser.login} href={retrivedUser.html_url} type="media">
+            <lightning-avatar slot="media" src={retrivedUser.avatar_url} 
+            fallback-icon-name="standard:person_account" alternative-text={retrivedUser.login}></lightning-avatar>
+           
+            <ul class="slds-list_horizontal slds-has-dividers_right">
+                <li class="slds-item">{retrivedUser.type},{retrivedUser.score}</li>
+                
+            </ul>
+        </lightning-tile>
+        <lightning-button-icon icon-name="action:approval"  alternative-text="approval" onclick={handlebuttonClick} title="Settings"></lightning-button-icon>
+    </div></template>
+</template>

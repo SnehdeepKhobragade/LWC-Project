@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="List of Users" style="color: aqua;">
+      <template if:true={showuser} >
+        the selected user is <strong>{selecteduser}</strong><br/>
+        <lightning-button variant="brand" label="SaveUser" title="Primary action" onclick={handleSaveUserClick} class="slds-m-left_x-small"></lightning-button>
+      </template>
+      <template if:true={retriveduserName}>
+        the retrived user Name is <strong>{retriveduserName}</strong>
+      </template>
+      <template if:true={retrivedusers}>
+      <template for:each={retrivedusers} for:item="retrivedusers">
+        <div key={retrivedusers.id}>
+            <c-lwc-devil retrived-user={retrivedusers} onuserclicked={handleonuserclicked}></c-lwc-devil>
+              </div>  
+            </template>
+        </template>
+    </lightning-card>
+    <lightning-carousel-image
+      src = "https://www.automotive-online.nl/wp-content/uploads/2017/10/ict_toekomst_online.jpg"
+    header = "Third Card"
+    description = "Third card description."
+    alternative-text = "Third card accessible description."
+    href = "https://www.automotive-online.nl/wp-content/uploads/2017/10/ict_toekomst_online.jpg">
+</lightning-carousel-image>
+</template>
