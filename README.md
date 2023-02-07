@@ -21,5 +21,5 @@ Live Demo on the Scratch Org: https://hosted-scratch.herokuapp.com/launch?templa
 
 # Preview
 
-![image](https://user-images.githubusercontent.com/121805476/217173095-bb5a4db7-be82-49b0-95f3-8dccc4036c3f.png)
+![image](https://user-images.githubusercontent.com/121805476/217173409-afa5f541-608a-47e9-aeb4-740d6d83259f.png)
 
