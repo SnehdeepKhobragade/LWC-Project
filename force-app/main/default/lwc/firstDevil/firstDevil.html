@@ -5,7 +5,7 @@
         <lightning-button variant="brand" label="SaveUser" title="Primary action" onclick={handleSaveUserClick} class="slds-m-left_x-small"></lightning-button>
       </template>
       <template if:true={retriveduserName}>
-        the retrived user Name is <strong>{retriveduserName}</strong>
+        the retrived user Name is. <strong>{retriveduserName}</strong>
       </template>
       <template if:true={retrivedusers}>
       <template for:each={retrivedusers} for:item="retrivedusers">
