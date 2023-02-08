@@ -12,7 +12,7 @@ let inputvalue=this.template.querySelectorAll("lightning-input")[0].value;
 const payload = { isTermvalid:true, searchTerm:inputvalue };  
  
     publish(this.messageContext, searchMessage, payload);  
-}  
+} 
  
      
 }
